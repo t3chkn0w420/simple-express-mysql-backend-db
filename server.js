@@ -29,4 +29,9 @@ app.use((err, req, res, next) => {
 
 app.listen(PORT, (error) =>{
   if(!error)
-      console.log(`Serve
+      console.log(`Server is Running Successfully at http://localhost:${PORT}`)
+  else 
+      console.log("Error occurred, server can't start", error);
+  }
+);
+

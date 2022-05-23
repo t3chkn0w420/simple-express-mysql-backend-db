@@ -17,6 +17,7 @@ router.post('/register', signupValidation, (req, res, next) => {
         return res.status(409).send({
           msg: 'Sorry, But Email is already in use 😥'
         });
+        
       } else {
         bcrypt.hash(req.body.password, 10, (err, hash) => {
           if (err) {
@@ -34,6 +35,7 @@ router.post('/register', signupValidation, (req, res, next) => {
                   });
                 }
                 return res.status(201).send({
+              //  res.json({ 'success': `User ${user} is logged in!` });
                   msg: 'User registered Successfully! 👌'
                 });
               }
